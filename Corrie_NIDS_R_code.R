@@ -40,24 +40,26 @@ hclust_test <- hclust(dist_mat, method = 'average') #use UPGMA ('average') metho
 plot(hclust_test)#plot to view cluster analysis
 
 ##Determine the NIDS Number for dataset####
-cut_NIDS <- cutree(hclust_test, h = 1.5)#set the desired NIDS metric using the "h = " input. 
-#Here NIDS set to 1.5 following recommendations of Hyland et al. 2021
+
+NIDS <-2.5 #Set the NIDS cut-off value. Default is 1.5 following recommendations of Hyland et al. 2021
+
+cut_NIDS <- cutree(hclust_test, h = NIDS)#set the desired NIDS metric using the "h = " input. 
 
 max(cut_NIDS)
 #?max
 
 #Optional Plot the cluster analysis with the NIDS cut off:1.5
 plot(hclust_test)
-rect.hclust(hclust_test, h = 1.5, border = 2:6)
-abline(h = 1.5, col = 'red')
+rect.hclust(hclust_test, h = NIDS, border = 2:6)
+abline(h = NIDS, col = 'red')
 
 #Optional nicer colouring of cluster plot based on NIDS cut off: 1.5
 #install.packages("dendextend")
 library(dendextend)
 NIDS_dend_obj <- as.dendrogram(hclust_test)
-NIDS_dend_obj <- color_branches(NIDS_dend_obj, h = 1.5)
+NIDS_dend_obj <- color_branches(NIDS_dend_obj, h = NIDS)
 plot(NIDS_dend_obj)
-abline(h = 1.5, col = 'red')
+abline(h = NIDS, col = 'red')
 
 ---------------------------------------------------------------------------------------
 
@@ -87,4 +89,6 @@ ggplot(Testdf_cl,
     axis.title.y = ggtext::element_markdown())+
   scale_fill_discrete(name = "NIDS Cluster")
 
-
+---------------------------------------------------------------------------------------
+#References####
+#Hyland, C., Scott, M.B., Routledge, J. et al. Stable Carbon and Nitrogen Isotope Variability of Bone Collagen to Determine the Number of Isotopically Distinct Specimens. J Archaeol Method Theory 29, 666–686 (2022). https://doi.org/10.1007/s10816-021-09533-7
