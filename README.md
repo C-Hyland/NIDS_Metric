@@ -2,7 +2,7 @@
 This is a repository for R code which allows researchers to calculate the NIDS Metric (Number of Isotopically Distinct Specimens) using stable carbon and nitrogen isotope values from bone collagen following the publication by Hyland et al. 2021 (https://doi.org/10.1007/s10816-021-09533-7).
 
 Within this code you can:
-- Calculate the NIDS value for a dataset of bone samples based on your cutoff metric (suggested 1.5, but see Hyland et al. 2021 for more discussion)
+- Calculate the NIDS value for a dataset of bone collagen samples based on your cutoff metric (suggested 1.5, but see Hyland et al. 2021 for more discussion)
 - Plot the NIDS cluster analysis with the cut off line and coloured dendrogram
 - Identify the clusters which each bone sample has been assigned
 - Plot the d13C and d15N values with respect to the identified NIDS clusters
