@@ -57,6 +57,7 @@ library(dendextend)
 NIDS_dend_obj <- as.dendrogram(hclust_test)
 NIDS_dend_obj <- color_branches(NIDS_dend_obj, h = 1.5)
 plot(NIDS_dend_obj)
+abline(h = 1.5, col = 'red')
 
 ---------------------------------------------------------------------------------------
 
