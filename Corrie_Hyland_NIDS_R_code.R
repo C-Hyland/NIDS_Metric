@@ -44,7 +44,7 @@ plot(hclust_test)#plot to view cluster analysis
 
 ##Determine the NIDS Number for dataset####
 
-NIDS <-2.5 #Set the NIDS cut-off value. Default is 1.5 following recommendations of Hyland et al. 2021
+NIDS <-1.5 #Set the NIDS cut-off value. Default is 1.5 following recommendations of Hyland et al. 2021, but see paper for recommendations on using other values.
 
 cut_NIDS <- cutree(hclust_test, h = NIDS)#set the desired NIDS metric using the "h = " input. 
 
