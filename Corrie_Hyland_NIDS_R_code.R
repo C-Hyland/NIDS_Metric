@@ -2,6 +2,7 @@
 title: "Corrie_Hyland_NIDS_R_code"
 author: "Corrie Hyland"
 date: "2024-08-12"
+Citation: "__"
 ---
 
 ##Getting set up####  
