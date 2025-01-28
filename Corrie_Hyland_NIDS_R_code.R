@@ -1,5 +1,5 @@
 ---
-title: "Corrie_NIDS_R_code"
+title: "Corrie_Hyland_NIDS_R_code"
 author: "Corrie Hyland"
 date: "2024-08-12"
 ---
@@ -9,10 +9,12 @@ rm(list=ls()) #refresh global environment
 graphics.off() #refresh graphics
 set.seed(1)
 
+#Download tidyverse package and load to library#
+#install.packages("tidyverse")
 library(tidyverse)
 
-#set your workind directory
-setwd("~/Corrie Things/Oxford 2023-2024/Skills Training/NIDS Check/NIDS_Check")
+#set your working directory
+setwd("~/Example_folder/Example_subfolder")
 
 ---------------------------------------------------------------------------------------
   
@@ -20,7 +22,7 @@ setwd("~/Corrie Things/Oxford 2023-2024/Skills Training/NIDS Check/NIDS_Check")
 #Dataset set up as a csv. file with just d13C and d15N values, header included
 Testdf <- read_csv("Book1.csv") #import small testing dataset
 
-#Or example randomized dataset following Jon Dombrosky
+#Or example randomized dataset
 set.seed(9810)
 
 Testdf <- data.frame(
@@ -48,7 +50,7 @@ cut_NIDS <- cutree(hclust_test, h = NIDS)#set the desired NIDS metric using the 
 max(cut_NIDS)
 #?max
 
-#Optional Plot the cluster analysis with the NIDS cut off:1.5
+#Optional Plot the cluster analysis with the NIDS cut off: 1.5
 plot(hclust_test)
 rect.hclust(hclust_test, h = NIDS, border = 2:6)
 abline(h = NIDS, col = 'red')
@@ -90,5 +92,5 @@ ggplot(Testdf_cl,
   scale_fill_discrete(name = "NIDS Cluster")
 
 ---------------------------------------------------------------------------------------
-#References####
+##Reference to original Article####
 #Hyland, C., Scott, M.B., Routledge, J. et al. Stable Carbon and Nitrogen Isotope Variability of Bone Collagen to Determine the Number of Isotopically Distinct Specimens. J Archaeol Method Theory 29, 666–686 (2022). https://doi.org/10.1007/s10816-021-09533-7
