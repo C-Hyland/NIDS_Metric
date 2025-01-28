@@ -9,3 +9,5 @@ Within this code you can:
     
 The code is currently set up to run data that is entered following the format of the csv file "Book1.csv", which allows for data to be entered as d13C and d15N values only.
 I will work to update the code so that the d13C and d15N values can be specified within a larger dataset so contextual information about each sample can be included in these analyses.
+
+If you use this software, please cite it using the information found in the "Cite this repository" panel to the right.
